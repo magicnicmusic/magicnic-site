@@ -1,0 +1,402 @@
+/* Reset + base layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  color: white;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.logo-title {
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+  max-width: 90%;
+  padding-bottom: 1em;
+}
+
+/* Navigation */
+nav {
+  width: 810px;
+  max-width: 90%;
+  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  text-align: center;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5em;
+}
+
+nav a {
+  font-size: 1.4em;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #cc5500;
+}
+
+/* Section layout */
+main {
+  flex: 1;
+  padding: 2em;
+  max-width: 1200px;
+  margin: 1em auto;
+}
+
+main section {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 2em;
+  width: 810px;
+  margin: 0 auto;
+  text-align: center;
+  animation: slideIn 0.6s ease forwards;
+  height: auto;
+  min-height: unset;
+}
+
+/* Tour list */
+.tour-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.show {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.details {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
+.ticket-link {
+  margin-left: 10px;
+  background: #222;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.ticket-link:hover {
+  background-color: #cc5500;
+}
+
+/* Email */
+.email-box {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  border: 2px solid #cc5500;
+  border-radius: 6px;
+  color: #cc5500;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.email-box:hover {
+  background-color: #cc5500;
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: auto;
+}
+
+.socials {
+  margin-top: 1em;
+}
+
+.socials a {
+  color: white;
+  margin: 0 0.25em;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.socials a:hover {
+  color: #cc5500;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonFlicker {
+  0%, 20%, 40%, 60%, 100% { opacity: 1; }
+  10% { opacity: 0.3; }
+  30% { opacity: 0.5; }
+  50% { opacity: 0.2; }
+}
+
+.flicker {
+  animation: neonFlicker 0.8s ease;
+}
+
+.floating-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Responsive Video Embeds */
+.video-container {
+  width: 90%;
+  max-width: 810px;
+  margin: 2em auto;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Bio */
+#bio {
+  text-align: left;
+}
+
+.bio-blurb {
+  margin-top: 2em;
+}
+
+.bio-blurb h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #cc5500;
+}
+
+.bio-text {
+  text-align: left;
+}
+
+/* Merch */
+.merch-item {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.merch-img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.merch-img:hover {
+  transform: scale(1.05);
+}
+
+.merch-caption {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  color: white;
+}
+
+/* Band Members */
+.band-members {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em auto;
+  max-width: 810px;
+}
+
+.member {
+  position: relative;
+  width: 200px;
+  height: 265px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.member img.default {
+  z-index: 1;
+  opacity: 1;
+}
+
+.member img.hover {
+  z-index: 2;
+  opacity: 0;
+}
+
+.member:hover img.hover {
+  opacity: 1;
+}
+
+.member:hover img.default {
+  opacity: 0;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 850px) {
+  main section {
+    width: 95%;
+    padding: 1em;
+  }
+
+  nav {
+    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1em;
+    gap: 0.2em; /* 👈 Reduces spacing between menu items */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1.1em;
+    line-height: 1.2;
+    padding: 0.2em 0;
+  }
+
+  .logo-title {
+    width: 90%;
+  }
+
+  .floating-logo {
+    display: none;
+  }
+
+  .band-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    width: 70vw;
+    height: auto;
+    aspect-ratio: 200 / 265;
+    position: relative;
+    margin-bottom: 1.5em;
+  }
+
+  .member img {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .member img.hover {
+    display: none;
+  }
+
+  .member:hover img.hover {
+    display: none;
+  }
+
+  .member:hover img.default {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .band-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    width: 30vw; /* scales nicely on mobile */
+    height: auto;
+    aspect-ratio: 200 / 265;
+  }
+
+  .member img {
+    height: auto;
+  }
+}
+

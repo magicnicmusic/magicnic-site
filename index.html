@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic Nic</title>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Your custom stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Header with Logo and Navigation -->
+    <header>
+      <img src="magic-nic-title.png" alt="Magic Nic & The General Electric" class="logo-title" />
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <div class="nav-links">
+          <a href="#" onclick="showSection('home')">HOME</a>
+          <a href="#" onclick="showSection('shows')">SHOWS</a>
+          <a href="#" onclick="showSection('merch')">MERCH</a>
+<a href="#" onclick="showSection('the-ge')">THE GE</a>
+
+          <a href="#" onclick="showSection('contact')">CONTACT</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+<section id="home">
+  <p></p>
+
+  <!-- Video 1 -->
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/8xSw-gOK_1E?autoplay=1&modestbranding=1&rel=0&mute=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Video 2 -->
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/wmMH8-AmYKQ?modestbranding=1&rel=0"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Video 3 -->
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/XoIcHmsyO_4?modestbranding=1&rel=0"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Video 4 -->
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/1G2iVegwTDc?modestbranding=1&rel=0"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+     <section id="shows" style="display: none;">
+  <h2></h2>
+  <div class="tour-list">
+    <div class="show">
+      <div class="date">July 13th, 2025</div>
+      <div class="details">
+        <span class="city">Sydney, NSW</span> – 
+        <span class="venue">King St Crawl</span>
+        <a href="https://www.kingstreetcrawl.com.au/" target="_blank" class="ticket-link">Tickets</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </section>
+
+    <section id="merch" style="display: none;">
+<div class="merch-item">
+  <a href="https://www.etsy.com/au/listing/4304649826/magic-nic-rainbow-unisex-cotton-ringer-t" target="_blank">
+    <img src="MN-tshirt.jpg" alt="Magic Nic T-Shirt" class="merch-img">
+  </a>
+  <p class="merch-caption">Magic Nic T-Shirt</p>
+</div>
+
+
+  <div class="merch-item">
+    <a href="https://www.etsy.com/au/listing/4304658402/magic-nic-the-general-electric-retro" target="_blank">
+      <img src="MN-jumper.png" alt="Magic Nic Jumper" class="merch-img">
+    </a>
+    <p class="merch-caption">Magic Nic Jumper</p>
+  </div>
+
+  <div class="merch-item">
+    <a href="https://greyhounddoggos.bandcamp.com/" target="_blank">
+      <img src="greyhound-vinyl.jpg" alt="Greyhound Vinyl" class="merch-img">
+    </a>
+    <p class="merch-caption">Greyhound Vinyl</p>
+  </div>
+
+
+</section>
+<section id="the-ge" style="display: none;">
+  <div class="band-members">
+    <a href="https://www.instagram.com/_jackinexile/" target="_blank" class="member">
+      <img src="member1.jpg" alt="Member 1" class="default">
+      <img src="instrument1.jpg" alt="Instrument 1" class="hover">
+    </a>
+    <a href="https://jaysquire.bandcamp.com/" target="_blank" class="member">
+      <img src="member2.jpg" alt="Member 2" class="default">
+      <img src="instrument2.jpg" alt="Instrument 2" class="hover">
+    </a>
+    <a href="https://niccasseymusic.bandcamp.com" target="_blank" class="member">
+      <img src="member3.jpg" alt="Member 3" class="default">
+      <img src="instrument3.jpg" alt="Instrument 3" class="hover">
+    </a>
+  </div>
+</section>
+
+
+
+   <section id="contact" style="display: none;">
+  <p>
+    For booking, press, or general inquiries:
+    <a href="mailto:eveningrecordsco@gmail.com" class="email-box">eveningrecordsco@gmail.com</a>
+  </p>
+
+  <div class="bio-blurb">
+    <h3>BIO</h3>
+  <p class="bio-text">
+      Magic Nic was not born into a musical home. Sheepishly self-taught, he left a cold town on the New England plateau to find it on the inner-west stages of Sydney. Belting over three part harmonies of garage-pop outfit Easy Street and transcending the astral plane with experimental noise rockers Greyhound, Magic Nic was slowly building a collection of heart sung scripts to croon over his creaking, soulful strokes. </p>
+  <p class="bio-text">Summoning the ghost of Billie, the spirit of Chet, Bukka's moan and a borrowed electric guitar, he somehow emulsified it all to a warbling cassette tape. Joining him on his upcoming EP are the General Electric, the most frightening rhythm section on this side of the sun.
+    </p>
+  </div>
+</section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Evening Records Co</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/magic_nic_music/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/magicnicmusic/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@magic_nic_music" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/artist/60XW2Vuho51qsIG0knl3I5" target="_blank"><i class="fab fa-spotify"></i></a>
+<a href="https://magicnic.bandcamp.com" target="_blank">
+  <img 
+    src="https://upload.wikimedia.org/wikipedia/commons/2/22/Bandcamp-logotype-color.svg" 
+    alt="Bandcamp" 
+    style="height: 1em; vertical-align: middle;" />
+</a>
+
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- Floating Logo GIF -->
+  <img src="logo.gif" alt="Floating Logo" class="floating-logo" />
+
+  <!-- JavaScript -->
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("main section");
+      sections.forEach(section => {
+        section.style.display = (section.id === id) ? "block" : "none";
+        if (section.id === id) {
+          section.style.animation = "none";
+          void section.offsetWidth;
+          section.style.animation = "slideIn 0.6s ease forwards";
+        }
+      });
+
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+      }
+    }
+
+    const logo = document.querySelector('.logo-title');
+    window.addEventListener('scroll', () => {
+      if (!logo.classList.contains('flicker')) {
+        logo.classList.add('flicker');
+        setTimeout(() => {
+          logo.classList.remove('flicker');
+        }, 800);
+      }
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
