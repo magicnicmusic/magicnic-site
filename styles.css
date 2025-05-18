@@ -54,7 +54,14 @@ nav {
   cursor: pointer;
   position: absolute;
   right: 0;
+  text-shadow: 0 0 2px white, 0 0 3px white;
 }
+
+.menu-toggle:hover {
+  color: #cc5500;
+  text-shadow: 0 0 5px #cc5500, 0 0 10px #cc5500;
+}
+
 
 .nav-links {
   display: flex;
@@ -67,12 +74,15 @@ nav a {
   font-size: 1.4em;
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 3px white, 0 0 5px white;
 }
 
 nav a:hover {
   color: #cc5500;
+  text-shadow: 0 0 5px #cc5500, 0 0 10px #cc5500;
 }
+
 
 /* Section layout */
 main {
@@ -399,4 +409,9 @@ footer {
     height: auto;
   }
 }
-
+@media (max-width: 850px) {
+  body.menu-open main,
+  body.menu-open footer {
+    display: none;
+  }
+}
