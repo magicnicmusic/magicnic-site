@@ -16,11 +16,14 @@
   <div class="page-wrapper">
     <!-- Header with Logo and Navigation -->
     <header>
-      <img src="magic-nic-title.png" alt="Magic Nic & The General Electric" class="logo-title" />
+   <a href="#" onclick="showSection('landing')">
+  <img src="magic-nic-title.png" alt="Magic Nic & The General Electric" class="logo-title" />
+</a>
+
       <nav>
         <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
         <div class="nav-links">
-          <a href="#" onclick="showSection('home')">HOME</a>
+          <a href="#" onclick="showSection('media')">MEDIA</a>
           <a href="#" onclick="showSection('shows')">SHOWS</a>
           <a href="#" onclick="showSection('merch')">MERCH</a>
 <a href="#" onclick="showSection('the-ge')">THE GE</a>
@@ -31,18 +34,21 @@
     </header>
 
     <main>
-<section id="home">
-  <p></p>
-
-  <!-- Video 1 -->
+<!-- Landing Page -->
+<section id="landing">
   <div class="video-container">
     <iframe 
       src="https://www.youtube.com/embed/8xSw-gOK_1E?autoplay=1&modestbranding=1&rel=0&mute=1"
       frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
   </div>
+</section>
 
-  <!-- Video 2 -->
+<section id="media" style="display: none;">
+
+  <p></p>
+
+  <!-- Video 1 -->
   <div class="video-container">
     <iframe 
       src="https://www.youtube.com/embed/wmMH8-AmYKQ?modestbranding=1&rel=0"
@@ -50,7 +56,7 @@
     </iframe>
   </div>
 
-  <!-- Video 3 -->
+  <!-- Video 2 -->
   <div class="video-container">
     <iframe 
       src="https://www.youtube.com/embed/XoIcHmsyO_4?modestbranding=1&rel=0"
@@ -58,7 +64,7 @@
     </iframe>
   </div>
 
-  <!-- Video 4 -->
+  <!-- Video 3 -->
   <div class="video-container">
     <iframe 
       src="https://www.youtube.com/embed/1G2iVegwTDc?modestbranding=1&rel=0"
@@ -167,39 +173,49 @@
   <img src="logo.gif" alt="Floating Logo" class="floating-logo" />
 
   <!-- JavaScript -->
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll("main section");
-      sections.forEach(section => {
-        section.style.display = (section.id === id) ? "block" : "none";
-        if (section.id === id) {
-          section.style.animation = "none";
-          void section.offsetWidth;
-          section.style.animation = "slideIn 0.6s ease forwards";
-        }
-      });
-
-      const navLinks = document.querySelector('.nav-links');
-      if (navLinks.classList.contains('show')) {
-        navLinks.classList.remove('show');
-      }
-    }
-
-    const logo = document.querySelector('.logo-title');
-    window.addEventListener('scroll', () => {
-      if (!logo.classList.contains('flicker')) {
-        logo.classList.add('flicker');
-        setTimeout(() => {
-          logo.classList.remove('flicker');
-        }, 800);
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll("main section");
+    sections.forEach(section => {
+      section.style.display = (section.id === id) ? "block" : "none";
+      if (section.id === id) {
+        section.style.animation = "none";
+        void section.offsetWidth;
+        section.style.animation = "slideIn 0.6s ease forwards";
       }
     });
 
-    const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  </script>
+    if (navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show');
+      document.body.classList.remove('menu-open'); // ✅ hide page content
+    }
+  }
+
+  // Flicker logo on scroll
+  const logo = document.querySelector('.logo-title');
+  window.addEventListener('scroll', () => {
+    if (!logo.classList.contains('flicker')) {
+      logo.classList.add('flicker');
+      setTimeout(() => {
+        logo.classList.remove('flicker');
+      }, 800);
+    }
+  });
+
+  // Toggle hamburger menu
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    document.body.classList.toggle('menu-open'); // ✅ toggle page visibility
+  });
+
+  // Show landing page by default
+  window.addEventListener('DOMContentLoaded', () => {
+    showSection('landing');
+  });
+</script>
+
 </body>
 </html>
