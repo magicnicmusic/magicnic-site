@@ -211,7 +211,8 @@ main section {
 }
 
 .ticket-link {
-  margin-left: 10px;
+  display: inline-block;  /* change from default inline */
+  margin-top: 0.5em;
   background: #222;
   color: white;
   padding: 0.3rem 0.6rem;
@@ -220,6 +221,7 @@ main section {
   font-size: 0.9rem;
   transition: background-color 0.3s;
 }
+
 
 .ticket-link:hover {
   background-color: #cc5500;
@@ -323,9 +325,6 @@ footer {
   }
 }
 
-
-
-/* Responsive Video Embeds */
 .video-container {
   width: 90%;
   max-width: 810px;
@@ -411,6 +410,34 @@ footer {
   overflow: hidden;
 }
 
+.member-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+.member-caption {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  text-align: center;
+  color: white;
+  line-height: 1.2;
+}
+
+.member-caption .name {
+  display: block;
+  font-weight: bold;
+}
+
+.member-caption .role {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+}
+
+
+
+
 .member img {
   width: 100%;
   height: 100%;
@@ -443,7 +470,6 @@ footer {
 
 
 
-
 /* Mobile Styles */
 @media (max-width: 850px) {
   main section {
@@ -467,7 +493,7 @@ footer {
     flex-direction: column;
     text-align: center;
     margin-top: 1em;
-    gap: 0.2em; /* 👈 Reduces spacing between menu items */
+    gap: 0.2em;
   }
 
   .nav-links.show {
@@ -488,23 +514,33 @@ footer {
     display: none;
   }
 
+  /* Updated layout for THE GE section on mobile */
   .band-members {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+    margin: 1em auto;
   }
 
   .member {
-    width: 70vw;
-    height: auto;
+    flex: 1 1 33.333%;
+    max-width: 33.333%;
     aspect-ratio: 200 / 265;
+    margin: 0;
     position: relative;
-    margin-bottom: 1.5em;
+    height: auto;
   }
 
   .member img {
     position: relative;
     width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   .member img.hover {
@@ -518,24 +554,19 @@ footer {
   .member:hover img.default {
     opacity: 1;
   }
-}
-@media (max-width: 600px) {
-  .band-members {
-    flex-direction: column;
-    align-items: center;
+
+  .member-caption {
+    font-size: 0.6em;
+    line-height: 1.1;
+    margin-top: 0.3em;
   }
 
-  .member {
-    width: 30vw; /* scales nicely on mobile */
-    height: auto;
-    aspect-ratio: 200 / 265;
-  }
-
-  .member img {
-    height: auto;
+  .member-wrapper {
+    width: 30vw;
   }
 }
-@media (max-width: 850px) {
+
+
   body.menu-open main,
   body.menu-open footer {
     display: none;
