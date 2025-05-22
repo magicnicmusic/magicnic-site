@@ -183,7 +183,7 @@ main section {
   text-align: center;
   animation: slideIn 0.6s ease forwards;
   height: auto;
-  min-height: 100vh;
+  min-height: unset;
  box-sizing: border-box;
 }
 
