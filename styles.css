@@ -17,6 +17,53 @@ html, body {
   background-position: center;
 }
 
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.preloader-content {
+  text-align: center;
+}
+
+#preloader img {
+  width: 50px;
+  height: 50px;
+}
+
+.loading-text {
+  margin-top: 0.5em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8em;
+  color: #333; /* charcoal */
+  letter-spacing: 1px;
+}
+
+/* Dot animation */
+.loading-text::after {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  text-align: left;
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -78,10 +125,30 @@ nav a {
   text-shadow: 0 0 3px white, 0 0 5px white;
 }
 
+.underline-ge {
+  font-weight: normal;
+  position: relative;
+}
+
+.underline-ge::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* adjust spacing from text */
+  width: 100%;
+  height: 3px; /* thickness of underline */
+  background-color: white;
+  box-shadow: 0 0 3px white, 0 0 6px white;
+}
+
 nav a:hover {
   color: #cc5500;
   text-shadow: 0 0 5px #cc5500, 0 0 10px #cc5500;
+  animation: flicker-orange 1.2s infinite;
 }
+
+}
+
 
 
 /* Section layout */
@@ -91,6 +158,10 @@ main {
   max-width: 1200px;
   margin: 1em auto;
 }
+main {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 
 main section {
   background-color: rgba(0, 0, 0, 0.6);
@@ -209,6 +280,19 @@ footer {
   pointer-events: none;
 }
 
+@keyframes flicker-orange {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    color: #cc5500;
+    text-shadow: 0 0 5px #cc5500, 0 0 10px #cc5500;
+  }
+  20%, 24%, 55% {
+    color: white;
+    text-shadow: 0 0 3px white, 0 0 5px white;
+  }
+}
+
+
+
 /* Responsive Video Embeds */
 .video-container {
   width: 90%;
@@ -245,6 +329,14 @@ footer {
 }
 
 /* Merch */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2em;
+  justify-items: center;
+  align-items: start;
+  margin-top: 2em;
+}
 .merch-item {
   text-align: center;
   margin-top: 2em;
@@ -316,6 +408,8 @@ footer {
 .member:hover img.default {
   opacity: 0;
 }
+
+
 
 
 /* Mobile Styles */
