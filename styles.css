@@ -256,14 +256,34 @@ footer {
   color: white;
   margin: 0 0.25em;
   font-size: 1.2em;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease;  
   text-decoration: none;
   display: inline-block;
 }
 
+.socials a img {
+  height: 0.8em;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  vertical-align: middle;
+  filter: brightness(100%); /* make sure it’s visible on dark background */
+}
+
+.bandcamp-icon img {
+  position: relative;
+  top: -2px; 
+}
+
+
 .socials a:hover {
   color: #cc5500;
+  transform: scale(1.1); 
 }
+
+.socials a:hover img {
+  filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(2deg) brightness(0.95) contrast(1.2);
+  transform: scale(1.1);
+}
+
 
 /* Animations */
 @keyframes slideIn {
