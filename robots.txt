@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://magicnic.com.au/sitemap.xml
