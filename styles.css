@@ -160,8 +160,6 @@ nav a:hover {
 
 }
 
-
-
 /* Section layout */
 main {
   flex: 1;
@@ -323,6 +321,54 @@ footer {
     color: white;
     text-shadow: 0 0 3px white, 0 0 5px white;
   }
+}
+.socials-top {
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.promo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  border-top: 1px solid #cc5500;
+  border-bottom: 1px solid #cc5500;
+}
+
+
+.album-cover-button {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.album-cover-button:hover {
+  transform: scale(1.05);
+}
+
+.promo-text {
+  font-size: 1.5em;
+  font-weight: 700; 
+  color: white;
+  text-shadow: 0 0 3px black;
+  text-decoration: none;
+  color: white; /* Optional: ensures it stays white */
+}
+
+.promo-text:hover {
+  color: #cc5500;
+}
+.shows-heading {
+  text-align: center;
+  font-size: 1.6em;
+  color: white;
+  margin-bottom: 1em;
+  text-shadow: 0 0 3px black;
 }
 
 
@@ -605,5 +651,3 @@ footer {
     display: none;
   }
 }
-
-
